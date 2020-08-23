@@ -27,6 +27,8 @@ def until(n, filter_func, v):
         return until(n, filter_func, v + 1)
 
 
-
-
 mult_3_5 = lambda x: x % 3 == 0 or x % 5 == 0
+
+
+def next_(n, x):
+    return (x + n / x) / 2
