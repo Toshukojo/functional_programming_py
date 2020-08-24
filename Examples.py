@@ -32,3 +32,16 @@ mult_3_5 = lambda x: x % 3 == 0 or x % 5 == 0
 
 def next_(n, x):
     return (x + n / x) / 2
+
+
+def repeat(f, a):
+    yield a
+    for v in repeat(f, f(a)):
+        yield v
+
+def within(ε, iterable):
+ def head_tail(ε, a, iterable):
+ b = next(iterable)
+ if abs(a-b) <= ε: return b
+ return head_tail(ε, b, iterable)
+ return head_tail(ε, next(iterable), iterable)
